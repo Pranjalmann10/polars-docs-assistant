@@ -1,0 +1,26 @@
+[project]
+name = "polars-docs-assistant"
+version = "0.1.0"
+description = "Agentic RAG assistant over the Polars user guide, with MCP tools, LangGraph, and Ragas evaluation."
+requires-python = ">=3.10"
+dependencies = [
+    "chromadb>=0.5.0",
+    "sentence-transformers>=3.0.0",
+    "langgraph>=0.2.0",
+    "langchain>=0.3.0",
+    "langchain-mcp-adapters>=0.1.0",
+    "langchain-ollama>=0.2.0",
+    "langchain-anthropic>=0.3.0",
+    "mcp>=1.2.0,<2",
+    "peft>=0.13.0",
+    "transformers>=4.45.0",
+    "torch>=2.3.0",
+    "bitsandbytes>=0.43.0; platform_system != 'Windows'",
+    "ragas>=0.2.0",
+    "datasets>=2.20.0",
+    "python-dotenv>=1.0.0",
+    "tqdm>=4.66.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
