@@ -15,8 +15,14 @@ dependencies = [
     "peft>=0.13.0",
     "transformers>=4.45.0",
     "torch>=2.3.0",
-    "bitsandbytes>=0.43.0; platform_system != 'Windows'",
-    "ragas>=0.2.0",
+    "bitsandbytes>=0.46.1",
+    # Pinned <0.3: ragas 0.4.x unconditionally imports a langchain_community
+    # submodule (chat_models.vertexai) that no longer exists in the
+    # langchain-community version langgraph/langchain-mcp-adapters need here.
+    # src/evaluate/metrics.py also stubs that import as a second line of
+    # defense in case a looser resolver picks a newer ragas anyway.
+    "ragas>=0.2.0,<0.3",
+    "langchain-huggingface>=0.1.0",
     "datasets>=2.20.0",
     "python-dotenv>=1.0.0",
     "tqdm>=4.66.0",
